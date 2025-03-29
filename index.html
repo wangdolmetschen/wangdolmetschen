@@ -12,7 +12,7 @@
       line-height: 1.6;
       background: #f2f2f2;
       color: #333;
-      padding: 2rem;
+      padding-top: 70px;
     }
     .container {
       max-width: 900px;
@@ -25,6 +25,29 @@
     header {
       text-align: center;
       margin-bottom: 2rem;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffffee;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 1rem;
+      margin: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #0070f3;
+      font-weight: 600;
     }
     h1 { font-size: 2rem; margin-bottom: 0.5rem; }
     h2 { font-size: 1.2rem; color: #666; }
@@ -40,7 +63,7 @@
     .lang-toggle {
       display: flex;
       gap: 1rem;
-      margin-bottom: 1rem;
+      margin: 2rem 0 1rem;
       justify-content: center;
     }
     .lang-toggle button {
@@ -56,12 +79,8 @@
       color: white;
       border-color: #0070f3;
     }
-    .lang-content {
-      display: none;
-    }
-    .lang-content.active {
-      display: block;
-    }
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
     form {
       display: flex;
       flex-direction: column;
@@ -88,9 +107,27 @@
       border-radius: 100px;
       margin-bottom: 1rem;
     }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+      background: #f7f7f7;
+      margin-top: 3rem;
+    }
   </style>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="#about">Über mich</a></li>
+      <li><a href="#services">Leistungen</a></li>
+      <li><a href="#experience">Erfahrung</a></li>
+      <li><a href="#education">Bildung</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+
   <div class="container">
     <header>
       <img src="portrait.jpg" alt="Jian Wang Portrait" />
@@ -105,12 +142,12 @@
 
     <!-- DEUTSCH -->
     <div id="lang-de" class="lang-content active">
-      <section class="section">
+      <section class="section" id="about">
         <h3 class="section-title">Über mich</h3>
         <p>Ich lege großen Wert auf Professionalität, Zuverlässigkeit und Diskretion. Meine umfassende Erfahrung und mein kulturelles Verständnis ermöglichen es mir, Sprachbarrieren effektiv zu überwinden und eine klare Kommunikation zwischen chinesisch- und deutschsprachigen Partnern sicherzustellen.</p>
       </section>
 
-      <section class="section">
+      <section class="section" id="services">
         <h3 class="section-title">Leistungen</h3>
         <ul>
           <li>Simultandolmetschen</li>
@@ -122,7 +159,22 @@
         </ul>
       </section>
 
-      <section class="section">
+      <section class="section" id="experience">
+        <h3 class="section-title">Erfahrung</h3>
+        <p>Freiberufliche Dolmetscherin für die Kantonspolizei Bern, Regionalgericht Bern, Caritas Bern und weitere Institutionen seit 2019. Frühere Einsätze für die Bundespolizei, das Verwaltungsgericht und das Zollamt von 2004–2018.</p>
+      </section>
+
+      <section class="section" id="education">
+        <h3 class="section-title">Bildung & Zertifizierung</h3>
+        <ul>
+          <li>Diplom-Wirtschaftsingenieurin, FH Stuttgart (1991–1996)</li>
+          <li>Bachelor Maschinenbau, Chong Qing Universität (1983–1987)</li>
+          <li>Deutschprüfung, Universität Stuttgart (1990–1991)</li>
+          <li>Zertifikat Justiz- und Strafverfolgungsdolmetschen (2020, Kanton Bern)</li>
+        </ul>
+      </section>
+
+      <section class="section" id="contact">
         <h3 class="section-title">Kontakt</h3>
         <form action="https://formspree.io/f/mwkgrqqq" method="POST">
           <input type="text" name="name" placeholder="Ihr Name" required>
@@ -135,12 +187,12 @@
 
     <!-- CHINESISCH -->
     <div id="lang-cn" class="lang-content">
-      <section class="section">
+      <section class="section" id="about">
         <h3 class="section-title">关于我</h3>
         <p>我非常重视专业性、可靠性和谨慎性。我丰富的经验和对文化的理解使我能够有效克服语言障碍，确保中德合作伙伴之间的清晰沟通。</p>
       </section>
 
-      <section class="section">
+      <section class="section" id="services">
         <h3 class="section-title">服务</h3>
         <ul>
           <li>同声传译</li>
@@ -152,7 +204,22 @@
         </ul>
       </section>
 
-      <section class="section">
+      <section class="section" id="experience">
+        <h3 class="section-title">经验</h3>
+        <p>自2019年以来，担任伯尔尼州警察局、区域法院、Caritas Bern 和其他机构的自由口译员。2004年至2018年期间，为联邦警察、行政法院和海关服务。</p>
+      </section>
+
+      <section class="section" id="education">
+        <h3 class="section-title">教育与认证</h3>
+        <ul>
+          <li>斯图加特应用科技大学经济工程学文凭 (1991–1996)</li>
+          <li>重庆大学机械工程学士 (1983–1987)</li>
+          <li>斯图加特大学德语考试 (1990–1991)</li>
+          <li>司法与刑事执法机构认证口译证书 (2020, 伯尔尼州)</li>
+        </ul>
+      </section>
+
+      <section class="section" id="contact">
         <h3 class="section-title">联系方式</h3>
         <form action="https://formspree.io/f/mwkgrqqq" method="POST">
           <input type="text" name="name" placeholder="您的姓名" required>
@@ -163,6 +230,10 @@
       </section>
     </div>
   </div>
+
+  <footer>
+    <p>📞 +41 076 831 25 48 | ✉️ jian3535@gmail.com | WeChat: wxid_slev4eqzoqeu22</p>
+  </footer>
 
   <script>
     const btnDe = document.getElementById('btn-de');
