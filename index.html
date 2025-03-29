@@ -98,60 +98,90 @@
       <h2>Chinesisch–Deutsch Dolmetscherin</h2>
     </header>
 
-    <section class="section">
-      <h3 class="section-title">Über mich / 关于我</h3>
-      <div class="lang-toggle">
-        <button id="btn-de" class="active">Deutsch</button>
-        <button id="btn-cn">中文</button>
-      </div>
-      <div id="text-de" class="lang-content active">
+    <div class="lang-toggle">
+      <button id="btn-de" class="active">Deutsch</button>
+      <button id="btn-cn">中文</button>
+    </div>
+
+    <!-- DEUTSCH -->
+    <div id="lang-de" class="lang-content active">
+      <section class="section">
+        <h3 class="section-title">Über mich</h3>
         <p>Ich lege großen Wert auf Professionalität, Zuverlässigkeit und Diskretion. Meine umfassende Erfahrung und mein kulturelles Verständnis ermöglichen es mir, Sprachbarrieren effektiv zu überwinden und eine klare Kommunikation zwischen chinesisch- und deutschsprachigen Partnern sicherzustellen.</p>
-      </div>
-      <div id="text-cn" class="lang-content">
+      </section>
+
+      <section class="section">
+        <h3 class="section-title">Leistungen</h3>
+        <ul>
+          <li>Simultandolmetschen</li>
+          <li>Konsekutivdolmetschen</li>
+          <li>Medizinisches Dolmetschen</li>
+          <li>Bildungsdolmetschen</li>
+          <li>Dokumentenübersetzung</li>
+          <li>Gerichts- und Behördendolmetschen</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3 class="section-title">Kontakt</h3>
+        <form action="https://formspree.io/f/mwkgrqqq" method="POST">
+          <input type="text" name="name" placeholder="Ihr Name" required>
+          <input type="email" name="email" placeholder="Ihre E-Mail" required>
+          <textarea name="message" placeholder="Ihre Nachricht..." rows="5" required></textarea>
+          <button type="submit">Nachricht senden</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- CHINESISCH -->
+    <div id="lang-cn" class="lang-content">
+      <section class="section">
+        <h3 class="section-title">关于我</h3>
         <p>我非常重视专业性、可靠性和谨慎性。我丰富的经验和对文化的理解使我能够有效克服语言障碍，确保中德合作伙伴之间的清晰沟通。</p>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <h3 class="section-title">Leistungen / 服务</h3>
-      <ul>
-        <li>Simultandolmetschen</li>
-        <li>Konsekutivdolmetschen</li>
-        <li>Medizinisches Dolmetschen</li>
-        <li>Bildungsdolmetschen</li>
-        <li>Dokumentenübersetzung</li>
-        <li>Gerichts- und Behördendolmetschen</li>
-      </ul>
-    </section>
+      <section class="section">
+        <h3 class="section-title">服务</h3>
+        <ul>
+          <li>同声传译</li>
+          <li>交替传译</li>
+          <li>医疗翻译</li>
+          <li>教育领域口译</li>
+          <li>文件和信件翻译</li>
+          <li>法院和机关口译</li>
+        </ul>
+      </section>
 
-    <section class="section">
-      <h3 class="section-title">Kontakt</h3>
-      <form action="https://formspree.io/f/mwkgrqqq" method="POST">
-        <input type="text" name="name" placeholder="Ihr Name" required>
-        <input type="email" name="email" placeholder="Ihre E-Mail" required>
-        <textarea name="message" placeholder="Ihre Nachricht..." rows="5" required></textarea>
-        <button type="submit">Nachricht senden</button>
-      </form>
-    </section>
+      <section class="section">
+        <h3 class="section-title">联系方式</h3>
+        <form action="https://formspree.io/f/mwkgrqqq" method="POST">
+          <input type="text" name="name" placeholder="您的姓名" required>
+          <input type="email" name="email" placeholder="您的电子邮箱" required>
+          <textarea name="message" placeholder="您的留言..." rows="5" required></textarea>
+          <button type="submit">发送</button>
+        </form>
+      </section>
+    </div>
   </div>
+
   <script>
     const btnDe = document.getElementById('btn-de');
     const btnCn = document.getElementById('btn-cn');
-    const textDe = document.getElementById('text-de');
-    const textCn = document.getElementById('text-cn');
+    const langDe = document.getElementById('lang-de');
+    const langCn = document.getElementById('lang-cn');
 
     btnDe.addEventListener('click', () => {
       btnDe.classList.add('active');
       btnCn.classList.remove('active');
-      textDe.classList.add('active');
-      textCn.classList.remove('active');
+      langDe.classList.add('active');
+      langCn.classList.remove('active');
     });
 
     btnCn.addEventListener('click', () => {
       btnCn.classList.add('active');
       btnDe.classList.remove('active');
-      textCn.classList.add('active');
-      textDe.classList.remove('active');
+      langCn.classList.add('active');
+      langDe.classList.remove('active');
     });
   </script>
 </body>
