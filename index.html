@@ -37,10 +37,30 @@
       margin-bottom: 1rem;
     }
     ul { padding-left: 1.2rem; }
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .lang-toggle {
+      display: flex;
       gap: 1rem;
+      margin-bottom: 1rem;
+      justify-content: center;
+    }
+    .lang-toggle button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+    }
+    .lang-toggle button.active {
+      background: #0070f3;
+      color: white;
+      border-color: #0070f3;
+    }
+    .lang-content {
+      display: none;
+    }
+    .lang-content.active {
+      display: block;
     }
     form {
       display: flex;
@@ -54,7 +74,7 @@
       border-radius: 8px;
       font-family: inherit;
     }
-    button {
+    button[type="submit"] {
       background: #0070f3;
       color: white;
       border: none;
@@ -68,11 +88,6 @@
       border-radius: 100px;
       margin-bottom: 1rem;
     }
-    @media(max-width: 768px) {
-      .two-column {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
 <body>
@@ -85,8 +100,14 @@
 
     <section class="section">
       <h3 class="section-title">Über mich / 关于我</h3>
-      <div class="two-column">
+      <div class="lang-toggle">
+        <button id="btn-de" class="active">Deutsch</button>
+        <button id="btn-cn">中文</button>
+      </div>
+      <div id="text-de" class="lang-content active">
         <p>Ich lege großen Wert auf Professionalität, Zuverlässigkeit und Diskretion. Meine umfassende Erfahrung und mein kulturelles Verständnis ermöglichen es mir, Sprachbarrieren effektiv zu überwinden und eine klare Kommunikation zwischen chinesisch- und deutschsprachigen Partnern sicherzustellen.</p>
+      </div>
+      <div id="text-cn" class="lang-content">
         <p>我非常重视专业性、可靠性和谨慎性。我丰富的经验和对文化的理解使我能够有效克服语言障碍，确保中德合作伙伴之间的清晰沟通。</p>
       </div>
     </section>
@@ -113,6 +134,26 @@
       </form>
     </section>
   </div>
+  <script>
+    const btnDe = document.getElementById('btn-de');
+    const btnCn = document.getElementById('btn-cn');
+    const textDe = document.getElementById('text-de');
+    const textCn = document.getElementById('text-cn');
+
+    btnDe.addEventListener('click', () => {
+      btnDe.classList.add('active');
+      btnCn.classList.remove('active');
+      textDe.classList.add('active');
+      textCn.classList.remove('active');
+    });
+
+    btnCn.addEventListener('click', () => {
+      btnCn.classList.add('active');
+      btnDe.classList.remove('active');
+      textCn.classList.add('active');
+      textDe.classList.remove('active');
+    });
+  </script>
 </body>
 </html>
 
